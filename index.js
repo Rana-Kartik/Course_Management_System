@@ -4,11 +4,11 @@ const path = require('path')
 
 const bodyPasrer = require('body-parser');
 
-const adminRoutes = require('./routes/admin')
-const homeRoutes = require('./routes/home')
-const sequelize = require('./utils/db');
+const adminRoutes = require('./routes/admin_route')
+const homeRoutes = require('./routes/home_route')
+const sequelize = require('./databaseConfig/config');
 //const Course = require('./models/coursemodel')
-const { Sequelize } = require("sequelize");
+
 const Course = require('./models/coursemodel')
 
 const app = express();
@@ -27,7 +27,7 @@ app.use((req,res) => {
 
     const viewsData = {
 
-        pageTitle: 'page not found'
+        pageTitle: 'Page is not access'
     };
 
     res.status(404).render('404',viewsData);
@@ -35,7 +35,7 @@ app.use((req,res) => {
 
 sequelize.authenticate().then(() => {
 
-    console.log('Connection established successfully');
+    console.log('Connection are successfully created');
 
 }).catch ((error) => {
 

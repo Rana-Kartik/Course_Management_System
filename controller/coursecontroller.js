@@ -8,22 +8,21 @@ exports.getAddCoursePage = (req,res) => {
             pageTitle:  'Add Course',
             edit: false
         };
-    res.render('AddCourse',viewsData)
+    res.render('CourseAdding',viewsData)
     
     }
 
 exports.postAddCoursePage = (req,res) => {
     console.log(req.body)
     const course = {
-    
         coursename: req.body.coursename,
         courseduration: req.body.courseduration,
         coursefees: req.body.coursefees
-    };
-
+    }
+  console.log(course)
     const courseObj = Course.build(course);
     courseObj.save().then(() => {
-         res.redirect('/')
+        console.log('Course added successfully')
     }).catch((error) => {
          console.log(error)
     })
@@ -40,7 +39,7 @@ exports.getEditCoursePage = (req,res) => {
         Course,
         pageTitle:  'Edit Course'
     }
-    res.render('EditCourse',viewsData)
+    res.render('CourseEditing',viewsData)
  }).catch((error) => {
     console.log(error)
  })

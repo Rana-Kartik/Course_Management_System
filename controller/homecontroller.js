@@ -9,7 +9,7 @@ exports.getHomePage = (req,res) => {
             courses,
             pageTitle:  'Home page - CMS'
         };
-        res.render('homepage',viewsData)
+        res.render('dashboard',viewsData)
     
     }).catch((error) => {
 

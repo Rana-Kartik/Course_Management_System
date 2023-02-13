@@ -1,13 +1,14 @@
 const {DataTypes} =require('sequelize')
-const sequelize = require('../utils/db')
+const sequelize = require('../databaseConfig/config')
 
 const course = sequelize.define('Course', {
 
     id: {
-        type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+        defaultValue : 1
     },
     coursename: {
         type: DataTypes.STRING,
@@ -20,7 +21,9 @@ const course = sequelize.define('Course', {
     coursefees:{
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
+},{
+    timestamps: false
 })
 
 module.exports = course;
