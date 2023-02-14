@@ -33,8 +33,9 @@ app.use((req,res) => {
     res.status(404).render('404',viewsData);
 })
 
-sequelize.authenticate().then(() => {
 
+sequelize.authenticate().then(async () => {
+    await sequelize.sync({ force: false })
     console.log('Connection are successfully created');
 
 }).catch ((error) => {

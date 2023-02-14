@@ -3,23 +3,22 @@ const sequelize = require('../databaseConfig/config')
 
 const course = sequelize.define('Course', {
 
+    // primaryKey: 'id', 
     id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
         type: DataTypes.INTEGER,
-        defaultValue : 1
+        autoIncrement: true,
+        primaryKey: true
     },
     coursename: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     courseduration:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     coursefees:{
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
 },{
