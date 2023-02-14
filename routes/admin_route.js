@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 const {getAddCoursePage, postAddCoursePage, getEditCoursePage, postEditCoursePage,postDeleteCoursePage} = require('../controller/coursecontroller')
 
-
+// Set the routes and call the controller method
 router.get('/add', getAddCoursePage );
 
 router.post('/add', postAddCoursePage);

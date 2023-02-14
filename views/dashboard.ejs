@@ -1,17 +1,14 @@
 <%- include('includes/head.ejs') %>
-
     <body>
-
         <%- include('includes/nav.ejs') %>
+        <!--Display the data in the table grid -->
             <main>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-
                             <div class="home-course-title" id="title2">
                                 Course list
                             </div>
-
                             <% if(courses.length) { %>
                                 <div>
                                     <table border="2">
@@ -24,57 +21,31 @@
                                         </thead>
                                         <% for(let course of courses) { %>
                                             <tr>
-                                               
-                                                <td><%= course.coursename %></td>
-                                                <td><%= course.courseduration %></td>
-                                                <td><%= course.coursefees %></td>
-                                                <td><a href="/courses/edit/<%= course.id%>" class="btn btn-primary">
-                                                    Edit</a></td>
-                                                    <td> <a href="/courses/delete/<%= course.id%>" class="btn btn-success">
-                                                        Delete</a></td>
+                                                <td>
+                                                    <%= course.coursename %>
+                                                </td>
+                                                <td>
+                                                    <%= course.courseduration %>
+                                                </td>
+                                                <td>
+                                                    <%= course.coursefees %>
+                                                </td>
+                                                <td>
+                                                    <a href="/courses/edit/<%=course.id%>" class="btn btn-primary">Edit</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/courses/delete/<%=course.id%>" class="btn btn-success">Delete</a>
+                                                </td>
                                             </tr>
                                         <% } %>
                                     </table>
                                 </div>
-                           
-                                <!-- <div class="row">
-
-                                    <% for(let course of courses) { %>
-                                        <div class="col-md-3">
-
-                                            <div class="course">
-                                                <h3>
-                                                    <%= course.coursename %>
-                                                </h3>
-                                                <hr>
-                                                <p> Duration: <%= course.courseduration %>
-                                                </p>
-                                                <p> Fees: <%= course.coursefees%>
-                                                </p>
-                                                <div class="my-2">
-
-
-                                                    <a href="/courses/edit/<%= course.id%>" class="btn btn-primary">
-                                                        Edit</a>
-
-                                                    <a href="/courses/delete/<%= course.id%>" class="btn btn-success">
-                                                        Delete</a>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <% } %>
-                                </div> -->
                                 <% } else { %>
                                     <div> No course available </div>
-                                    <% } %>
-
+                                <% } %>
                         </div>
                     </div>
                 </div>
-
             </main>
     </body>
-
     </html>

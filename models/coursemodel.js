@@ -1,9 +1,9 @@
-const {DataTypes} =require('sequelize')
+const { DataTypes } = require('sequelize')
 const sequelize = require('../databaseConfig/config')
 
 const course = sequelize.define('Course', {
 
-    // primaryKey: 'id', 
+    // create the course table
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -13,15 +13,15 @@ const course = sequelize.define('Course', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    courseduration:{
+    courseduration: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    coursefees:{
+    coursefees: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-},{
+}, {
     timestamps: false
 })
 

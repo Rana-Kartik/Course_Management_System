@@ -1,57 +1,38 @@
 <%- include('includes/head.ejs') %>
+    <body>
+        <%- include('includes/nav.ejs') %>
+            <main>
+                <!-- Adding the Course -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="add-course-title" id="title1">
+                                Add course
+                            </div>
+                            <form method="POST" action="/courses/add">
 
-<body>
-    <%- include('includes/nav.ejs') %>
+                                <div class="add-course-name">
+                                    <label for="coursename"> <b> Course Name </b> </label>
+                                    <input type="text" class="form-control" name="coursename" placeholder="Enter course name" pattern="[A-Za-z]+" required />
+                                </div>
 
-     <main> 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+                                <div class="add-course-duration">
+                                    <label for="courseduration"> <b> Course Duration </b> </label>
+                                    <input type="number" class="form-control" name="courseduration" placeholder="Enter course duration" min="0" max="1000" required />
+                                </div>
 
-      
-        <div class="add-course-title" id="title1"> 
-             Add course 
-        </div> 
-        <form method="POST" action="/courses/add">
-          
-            <div class="add-course-name">     
+                                <div class="add-course-fees">
+                                    <label for="coursefees"> <b> Course Fees </b> </label>
+                                    <input type="number" class="form-control" name="coursefees" placeholder="Enter Course fee" min="0" max="100000" required />
+                                </div>
 
-            <label for="coursename"> <b> Course Name </b> </label>
-            <input type="text" class="form-control" name="coursename" placeholder="Enter course name" required/>  
-
-            </div> 
-
-            <div class="add-course-duration">     
-
-            <label for="courseduration"> <b> Course Duration </b>  </label>
-            <input type="number" class="form-control" name="courseduration"  placeholder="Enter course duration"  required/> 
-            
-            </div>
-
-            <div class="add-course-fees">     
-            <label for="coursefees"> <b> Course Fees </b> </label>
-            <input type="text" class="form-control" name="coursefees"  placeholder="Enter Course fee"  required/> 
-            
-            </div>
-
-            <div class="btn-add" id="btn-add"> 
-                  <input type="submit" class="btn btn-warning" value="AddCourse"> 
-            </input>
-            
-        </div>
-        
-         </form>
-         </div>
- 
-    </div>
-</div>
-</main>
-
-
+                                <div class="btn-add" id="btn-add">
+                                    <input type="submit" class="btn btn-warning" value="AddCourse"></input>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
 </body>
-<script>
-
-
-</script>
-
 </html>
